@@ -1,0 +1,52 @@
+ 
+<ion-popover-view style="outline: none !important;
+ top: 20%; 
+    border-color: #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+    width: 100%;
+    background-color: #eee;
+    background-color: #FFFFFF;opacity: 1;" class="popoverrevenue">
+  <ion-header-bar class="bar-positive formdetails-header-bar bar bar-header disable-user-behavior has-tabs-top">
+    <h3 class="header_formname ng-binding" style="width:100%;text-align: center;
+    margin-top: 7px;">Previous Complaint Details</h3>
+    <div class="custom_header_back" ng-click="closePreviousComplaints();">
+      <img src="img/cancel.png" class="header-back">
+      </div>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list ng-if="precomplaints != undefined && precomplaints.complaintNo != null">
+        <ion-item class="item-text-wrap" >
+          <div class="row" >
+            <div class="col col-50" >Complaint No</div>
+            <div class="col col-50" >{{precomplaints.complaintNo}}</div>
+          </div>
+        </ion-item>
+        <ion-item class="item-text-wrap" >
+          <div class="row" >
+            <div class="col col-50" >Complaint Type</div>
+            <div class="col col-50" >{{precomplaints.complaintType | uppercase}}</div>
+          </div>
+        </ion-item>
+        <ion-item class="item-text-wrap" >
+          <div class="row" >
+            <div class="col col-50" >Complaint Description</div>
+            <div class="col col-50" >{{precomplaints.complaintDesc}}</div>
+          </div>
+        </ion-item>
+        <ion-item class="item-text-wrap" >
+          <div class="row" >
+            <div class="col col-50" >Grievance Status</div>
+            <div class="col col-50" >{{precomplaints.grievanceStatus}}</div>
+          </div>
+        </ion-item>
+      </ion-list>
+      <ion-list ng-if="precomplaints == undefined || precomplaints.complaintNo == null">
+        <ion-item class="animate-repeat">
+          <div class="item item-text-wrap" >No Data available</div>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+
+
+
+

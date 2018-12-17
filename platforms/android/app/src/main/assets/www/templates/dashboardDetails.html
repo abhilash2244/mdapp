@@ -1,0 +1,158 @@
+
+
+<ion-view hide-nav-bar="true" ng-init="validLogin()">
+  <ion-header-bar class="bar-positive " style="top:0px">
+    <div class="custom_header_back" ng-click="backToDashboard();">
+      <img src="img/back.png" class="header-back">
+      </div>
+      <h1 class="title tabs-title-lable"> Visitor's Information </h1>
+      <div ng-if="canInfo.Signature_1209189 !== '' && canInfo.TextBox__name_1416992 == '' " class="buttons actionbar_button_position" ng-hide="isHistoryShowing" style="top: 6px;
+    right: 8%;">
+        <button class = "button button-small" style="color: #3a3232;background-color:white; width: 60px;margin-right: 5px;height: 10px;" ng-click='submitTaskFormData("accepted")'>Accept</button>
+        <button class = "button button-small" style="color: #3a3232;background-color:white; width: 60px;width: 60px;height: 10px;margin-right: 10px;" ng-click='submitTaskFormData("rejected")' class="heder_sync">Reject</button>
+      </div>
+      <img src="img/ellipse.png" class="headerEllipse" ng-click="showMenu($event)">
+      </div>
+    </ion-header-bar>
+    <ion-content  class="padding">
+      <div class="list" style="width: 104%;margin-left: -2%;top: -10px;">
+        <!-- <div class="row" style="    margin-left: 0px;"><div class="col col-50" ng-click="revenue({{canInfo.TextBox__name_2003980}})" style="    border: 1px solid #00000069;"><center>REVENUE DETAILS</center></div><div class="col col-50" ng-click="previouscomplaints({{canInfo.TextBox__name_2003980}})" style="border: 1px solid #00000069;"><center>PREVIOUS COMPLAINTS</center></div></div> -->
+        <div ng-if="canInfo.TextBox__name_2003980 != null " class="row" style="    margin-left: 0px;">
+          <div class="col col-50" ng-click="revenue({{canInfo.TextBox__name_2003980}})" style="    border: 1px solid #00000069;border: 1px solid #bdb4b4;">
+            <center>REVENUE DETAILS</center>
+          </div>&nbsp;
+  
+          <div class="col col-50" ng-click="previouscomplaints({{canInfo.TextBox__name_2003980}})" style="border: 1px solid #00000069;border: 1px solid #bdb4b4;">
+            <center>PREVIOUS COMPLAINTS</center>
+          </div>
+        </div>
+        <a class="item item-icon-left" on-click="">
+          <i class="icon ion-person"></i>
+    {{canInfo.TextBox__name_2007716}}
+  
+        </a>
+        <a class="item item-icon-left" on-click="">
+          <img src="img/id.png" ng-if="x.Textarea__Name_1212392 !== '' " style="float:left;margin-right: -25%;
+    width: 22px;
+    height: 22px;
+     margin-top: 0px; 
+     margin-left: -39px; " class="header-icon">
+    {{canInfo.TextBox__name_2003980}}
+  
+          </a>
+          <div class="hideAddress">
+            <a class="item item-icon-left item-icon-right">
+              <i class="icon ion-location"></i>
+    Address
+    
+              <i class="icon ion-chevron-down"></i>
+            </a>
+          </div>
+          <div class="addressHide">
+            <div class="item-text-wrap">
+              <a class="item item-icon-left">
+    {{canInfo.Textarea__Name_2011279}}
+  </a>
+            </div>
+            <a  ng-if="canInfo.TextBox__name_2012571 != null && canInfo.TextBox__name_2012571 != '' " class="item item-icon-left">
+    {{canInfo.TextBox__name_2012571}}
+  </a>
+            <a  ng-if="canInfo.TextBox__name_2013567 != null && canInfo.TextBox__name_2013567 != '' " class="item item-icon-left">
+    {{canInfo.TextBox__name_2013567}}
+  </a>
+            <a ng-if="canInfo.TextBox__name_2014095 != null && canInfo.TextBox__name_2014095 != '' " class="item item-icon-left">
+    {{canInfo.TextBox__name_2014095}}
+  </a>
+            <a ng-if="canInfo.TextBox__name_2015744 != null && canInfo.TextBox__name_2015744 != '' " class="item item-icon-left">
+    {{canInfo.TextBox__name_2015744}}
+  </a>
+  <a ng-if="canInfo.TextBox__name_1144009 != null && canInfo.TextBox__name_1144009 != '' " class="item item-icon-left">
+    {{canInfo.TextBox__name_1144009}}
+  </a>
+            <a ng-if="canInfo.TextBox__name_2016853 != null && canInfo.TextBox__name_2016853 != '' " class="item item-icon-left">
+    {{canInfo.TextBox__name_2016853}}
+  </a>
+          </div>
+          <a class="item item-icon-left">
+            <i class="icon ion-iphone"></i>
+    {{canInfo.TextBox__name_2012433}}
+  
+          </a>
+          <a class="item item-icon-left" >
+     Complaint : 
+    {{canInfo.Dropdown__name_1818644 | uppercase}}
+
+  </a>
+          <a class="item item-icon-left">
+    {{canInfo.Dropdown__name_1852157}}
+  </a>
+          <a class="item item-icon-left" >
+            <i class="icon ion-clipboard"></i>
+            <textarea disabled style="background: rgba(255,255,255,0);outline: none !important;
+    border-color: #719ECE;
+    box-shadow: 0 0 10px #719ECE;width:100%" rows="4" cols="50" ng-model="canInfo.Textarea__Name_2020713" placeholder="REMARKS"></textarea>
+          </a>
+          <div class="hideAttachment">
+            <a class="item item-icon-left">
+              <i class="icon ion-paperclip"></i>
+    Attachments
+    
+              <span class="badge badge-assertive">{{count}}</span>
+            </a>
+          </div>
+          <div class="attachmentHide">
+            <a class="item item-icon-left" id="attachments">
+              <img ng-if="canInfo.Image__Name_1156787 !== '' " ng-click="openImage(canInfo.Image__Name_1156787)" ng-src="{{canInfo.Image__Name_1156787}}" class="imagestyle">
+                <img ng-if="canInfo.Image__Name_1158897 !== '' " ng-click="openImage(canInfo.Image__Name_1158897)" ng-src="{{canInfo.Image__Name_1158897}}" class="imagestyle">
+                  <img ng-if="canInfo.Image__Name_1200438 !== '' " ng-click="openImage(canInfo.Image__Name_1200438)" ng-src="{{canInfo.Image__Name_1200438}}" class="imagestyle">
+                    <img ng-if="canInfo.Image__Name_1201580 !== '' " ng-click="openImage(canInfo.Image__Name_1201580)" ng-src="{{canInfo.Image__Name_1201580}}" class="imagestyle">
+                    </a>
+                  </div>
+                  <a class="item item-icon-left" >
+                    <i class="icon ion-compose"></i>
+                    <img style="width:100%;" ng-src='{{canInfo.Signature_1202725}}'>
+                    </a>
+                    <div class="item item-divider" style="    background: #0c60ee;
+    color: white;">
+    MD/ED/DT Section
+  </div>
+                    <a class="item item-icon-left">
+                      <i class="icon ion-clipboard"></i>
+                      <textarea style="background: rgba(255,255,255,0);outline: none !important;
+    border-color: #719ECE;
+    box-shadow: 0 0 10px #719ECE;width:100%" rows="4" cols="50" ng-model="canInfo.Textarea__Name_1207218" placeholder="REMARKS"></textarea>
+                    </a>
+                    <!-- <a class="item item-icon-left" ng-if="canInfo.TextBox__name_1416992 == '' && canInfo.Signature_1209189 == '' " class="button button-full" ng-click="showSignaturePad();" ><i class="icon ion-compose"></i>
+    open signature pad
+  </a> -->
+                    <a class="item item-icon-left" ng-click="showSignaturePad();">
+                      <i class="icon ion-compose" ></i>
+                      <img style="width:100%;" ng-src='{{canInfo.Signature_1209189}}'/>
+                    </a>
+                    <div ng-if="canInfo.TextBox__name_1416992 != '' " class="item item-divider" style="background: #0c60ee;
+    color: white;">
+    Assigned GM: {{canInfo.TextBox__name_1416992}}
+  </div>
+                    <div ng-if="canInfo.TextBox__name_1754324 !== '' ">
+                      <div class="item-text-wrap">
+                        <a class="item item-icon-left">
+    {{canInfo.TextBox__name_1754324}}
+  </a>
+                      </div>
+                    </div>
+                    <div ng-if="canInfo.Textarea__Name_1212392 !== '' ">
+                      <a class="item item-icon-left">
+                        <i class="icon ion-clipboard"></i>
+                        <textarea style="background: rgba(255,255,255,0);outline: none !important;
+    border-color: #719ECE;
+    box-shadow: 0 0 10px #719ECE;width:100%" rows="4" cols="50" ng-model="canInfo.Textarea__Name_1212392" placeholder="REMARKS"></textarea>
+                      </a>
+                      <a class="item item-icon-left" ng-if="canInfo.Signature_1214482 !== '' ">
+                        <i class="icon ion-compose"></i>
+                        <img style="width:100%;" ng-src='{{canInfo.Signature_1214482}}'/>
+                      </a>
+                    </div>
+                  </div>
+                  <br>
+                  </ion-content>
+                </ion-view>

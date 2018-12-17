@@ -1,0 +1,29 @@
+<ion-popover-view style="outline: none !important;
+ top: 20%; 
+    border-color: #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+    width: 100%;
+    background-color: #eee;
+    background-color: #FFFFFF;opacity: 1;" class="popoverrevenue">
+
+    <ion-header-bar class="bar-positive formdetails-header-bar bar bar-header disable-user-behavior has-tabs-top">
+    <h3 class="header_formname ng-binding" style="width:100%;text-align: center;
+    margin-top: 7px;">List Of GM</h3>
+    <div class="custom_header_back" ng-click="closeGm();"><img src="img/cancel.png" class="header-back"></div>
+    
+  </ion-header-bar> 
+    <ion-content>
+  <ion-list ng-if="totalUsers != undefined" ng-repeat="data in totalUsers">
+            <ion-item class="animate-repeat" >
+               <div class="row" >
+                 <div class="col col-100 " ng-click="assignrecord2gm(data.name)">{{data.name}}
+                  <img src="img/assignto.png" style="float:right;" class="header-back">
+                 </div>
+               </div>
+              </ion-item>
+          </ion-list>
+    </ion-content>
+
+</ion-popover-view>
+
+

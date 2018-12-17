@@ -1,0 +1,25 @@
+<ion-view hide-nav-bar="true">
+    <ion-header-bar class="bar-positive " style="top:0px">
+        <h1 class="title tabs-title-lable"> Complaints </h1>
+        </div>
+    </ion-header-bar>
+    <ion-content ng-init="validLogin()" class="login">
+        <ion-refresher pulling-icon="ion-arrow-down-b" on-refresh="getComplaints()"></ion-refresher>
+        <div class="row">
+            <input class="fontAwesome" id="searchId" type="search" ng-model="search" placeholder="&#61442; Search" clear-input="">
+            <img src="img/Filter.png" ng-hide="hide_ellipse" class="selectOptions" ng-click="openFilter()" id="filter_Btn">
+        </div>
+        <center>
+            <a ng-click="getVisitorData(x.TextBox__name_2006749)" ng-repeat="x in completeRecords | orderBy: reverse:true | filter:search" type="item-text-wrap" href="#/tab/complaints/{{x.TextBox__name_2006749}}" ng-if="x.TextBox__name_1416640 == ''">
+                <span class="badge badge-header" id="gridbadge"><h3 style="margin-top: 26px;color: white;">{{x.TextBox__name_2006749}}</h3>
+      <p style="color: white;">{{x.Dropdown__name_1603849}}</p>
+    </span></a>
+        </center>
+        <ion-list ng-if="completeRecords == undefined">
+            <ion-item style="margin-top: 5px; class=" animate-repeat ">
+                  <div  class="item item-text-wrap " >No complaints available</div>
+              </ion-item>
+      </ion-list>
+    <br><br>
+  </ion-content>
+</ion-view>

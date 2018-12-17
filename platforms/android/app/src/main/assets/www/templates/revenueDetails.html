@@ -1,0 +1,79 @@
+ <ion-popover-view style="outline: none !important;
+ top: 20%; 
+    border-color: #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+    width: 100%;
+    background-color: #eee;
+    background-color: #FFFFFF;opacity: 1;" class="popoverrevenue">
+
+    <ion-header-bar class="bar-positive formdetails-header-bar bar bar-header disable-user-behavior has-tabs-top">
+    <h3 class="header_formname ng-binding" style="width:100%;text-align: center;
+    margin-top: 7px;">Revenue Details</h3>
+    <div class="custom_header_back" ng-click="closeRevenue();"><img src="img/cancel.png" class="header-back"></div>
+    
+  </ion-header-bar>
+    <ion-content  >
+        
+         <ion-list ng-if="revenuedetails != undefined"  >
+            <ion-item class="animate-repeat">
+
+              <div class="row" >
+                <div class="col col-50" >Bill Date</div>
+                <div class="col col-50" >{{revenuedetails.billDate}}</div>
+              </div>
+
+                  <!-- <a class="aboutus_link" ng-click="">BILL GENERATED {{data.BillGenerated}}</a> -->
+              </ion-item>
+              <ion-item class="animate-repeat" >
+
+                <div class="row" >
+                <div class="col col-50" >Bill No</div>
+                <div class="col col-50" >{{revenuedetails.billNO}}</div>
+              </div>
+                 <!--  <a class="aboutus_link" ng-click="">BILL STATUS{{data.BillStatus}}</a> -->
+              </ion-item>
+              <ion-item class="animate-repeat" >
+
+
+              <div class="row" >
+                <div class="col col-50" >Demand</div>
+                <div class="col col-50" >{{revenuedetails.demand}}</div>
+              </div>
+
+                 <!--  <a class="aboutus_link" ng-click="">{{data.LastBillPaidDate}}</a> -->
+              </ion-item>
+              <ion-item class="animate-repeat" >
+
+                <div class="row" >
+                <div class="col col-50" >Last Receipt Amount</div>
+                <div class="col col-50" >{{revenuedetails.lastReceiptAmount}}</div>
+              </div>
+                  <!-- <a class="aboutus_link" ng-click="">{{data.LastBillgeneratedDate}}</a> -->
+              </ion-item>
+              <ion-item class="animate-repeat" >
+
+                <div class="row" >
+                <div class="col col-50" >Last Receipt Date</div>
+                <div class="col col-50" >{{revenuedetails.lastReceiptDate}}</div>
+              </div>
+                  <!-- <a class="aboutus_link" ng-click="">{{data.LastBillgeneratedDate}}</a> -->
+              </ion-item>
+              <ion-item class="animate-repeat" >
+
+                <div class="row" >
+                <div class="col col-50" >Arrears</div>
+                <div class="col col-50" >{{revenuedetails.waterRevenueBalance}}</div>
+              </div>
+                  <!-- <a class="aboutus_link" ng-click="">{{data.LastBillgeneratedDate}}</a> -->
+              </ion-item>
+      </ion-list>
+      <ion-list ng-if="revenuedetails == undefined">
+            <ion-item class="animate-repeat">
+                  <div class="item item-text-wrap" >No data available</div>
+              </ion-item>
+      </ion-list>
+    </ion-content>
+
+</ion-popover-view>
+
+

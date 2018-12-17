@@ -1,0 +1,45 @@
+<ion-view hide-nav-bar="true" >
+  <ion-view hide-nav-bar="true" >
+    <ion-header-bar class="bar-positive " style="top:0px">
+      <h1 class="title tabs-title-lable"> Dashboard </h1>
+    </div>
+  </ion-header-bar>
+  <ion-content ng-init="validLogin()" class="login">
+    <ion-refresher pulling-icon="ion-arrow-down-b" on-refresh="getComplaints()"></ion-refresher>
+    <div class="row">
+      <input class = "fontAwesome" id="searchId" type="search" ng-model="search" placeholder="&#61442; Search" clear-input="">
+        <img src="img/Filter.png" ng-hide="hide_ellipse" class="selectOptions"  ng-click="openFilter()" id="filter_Btn">
+        </div>
+        <ion-list>
+          <!--  class has been commented class="item-remove-animate item-avatar item-icon-right" -->
+          <ion-item style="width: 98%;
+    margin-left: 1%;" class="formscontainer shadow" ng-click="getVisitorData(x.TextBox__name_2006749)"  ng-repeat="x in completeRecords | orderBy: reverse:true | filter:search" type="item-text-wrap" href="#/tab/dashboard/{{x.TextBox__name_2006749}}">
+            <div ng-click="getAssignedTaskForms(item);">
+              <div class="ion-image">
+                <img src="img/Tasks.png" class="container-image"/>
+              </div>
+              <div class="ion-desc">
+                <p>Name :  {{x.TextBox__name_2007716}}</p>
+                <small>Complaint : {{x.Dropdown__name_1818644 | uppercase}}</small>
+                <img src="img/Assign_To.png" ng-if="x.TextBox__name_1416640 == 'accepted' && x.TextBox__name_1416992 == '' " style="float:right;" class="header-icon">
+                  <img src="img/Rejected.png" ng-if="x.TextBox__name_1416640 == 'rejected'" style="float:right;" class="header-icon">
+                    <img src="img/Assigned.png" ng-if="x.TextBox__name_1416992 !== '' && x.Textarea__Name_1212392 == '' " style="float:right;" class="header-icon">
+                      <img src="img/Finished.png" ng-if="x.Textarea__Name_1212392 !== '' " style="float:right;" class="header-icon">
+                      </div>
+                    </div>
+                    <!-- <i class="icon ion-chevron-right icon-accessory"></i> -->
+                    <!-- ng-if="x.TextBox__name_1150617 == 'accepted' && x.TextBox__name_1501794 == '' " -->
+                    <ion-option-button class="button-calm" ng-click="showGm({{x.TextBox__name_2006749}})" ng-if="x.TextBox__name_1416640 == 'accepted' && x.TextBox__name_1416992 == '' ">
+          Assign
+        </ion-option-button>
+                  </ion-item>
+                </ion-list>
+                <ion-list ng-if="completeRecords == undefined">
+                  <ion-item style="margin-top: 5px; class="animate-repeat">
+                    <div  class="item item-text-wrap" >No complaints available</div>
+                  </ion-item>
+                </ion-list>
+                <br>
+                  <br>
+                  </ion-content>
+                </ion-view>

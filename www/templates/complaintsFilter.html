@@ -1,0 +1,38 @@
+<ion-popover-view style="outline: none !important;
+ top: 20%; 
+    border-color: #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+    width: 100%;
+    background-color: #eee;
+    background-color: #FFFFFF;opacity: 1;" class="filterpopover">
+  <ion-header-bar class="bar-positive formdetails-header-bar bar bar-header disable-user-behavior has-tabs-top">
+    <h3 class="header_formname ng-binding" style="width:100%;text-align: center;
+    margin-top: 7px;"> Filter By</h3>
+    <div class="custom_header_back" ng-click="closeFilter();">
+      <img src="img/cancel.png" class="header-back">
+      </div>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list >
+        <ion-item class="animate-repeat" >
+          <p>Filter By Date:</p>
+          <div class="row" style="height: 42px;">
+            <div class="col col-25" style="background-color: #06bbef;border-radius: 5px !important;" >
+              <input ng-model="filter.fromdate" style="background: transparent;padding-top: 3px;color: white;" type="date" placeholder="From" required="required">
+              </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 
+              <div class="col col-25" style="background-color: #06bbef;border-radius: 5px !important;">
+                <input ng-model="filter.todate" style="color: white;background: transparent;padding-top: 3px;" type="date" placeholder="To" required="required">
+                  <!-- <img src="img/Re-assign_Active.png" style="float:right;" class="header-back"> -->
+                </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <div class="col col-25" style="border:1px solid grey;border-radius: 5px !important;" ng-click="getComplaintsFilter(filter)">
+                  <center> Filter</center>
+                </div>
+              </div>
+            </ion-item>
+          </ion-list>
+        </ion-content>
+      </ion-popover-view>
+
+

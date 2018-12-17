@@ -1,0 +1,32 @@
+<!-- 
+    <ion-content class="sigstyle">
+   <center> <canvas id="signatureCanvas1" ng-model="canInfo.Signature_1209189"></canvas></center>
+          <div class='button-bar'>
+              <a class='button ' ng-click='clearCanvasPad()'>Clear</a>
+              <a class='button button-positive' ng-click='saveCanvasPad()'>Save</a>
+          </div>
+    </ion-content> -->
+
+<!-- backup of dimensions sigpad
+ --><!-- width="1160" height="308"  -->
+
+  <ion-nav-bar class="bar bar-header bar-positive" style="background-color: #3a7dda;height: 40px;">
+     <ion-nav-title style="left: 75px;right: 75px;">
+         <span style="color: #FFFFFF;" >MD/ED/DT Signature</span>
+     </ion-nav-title>
+     <ion-nav-buttons side = "right">
+     
+    <ion-label style="float:right; padding-right:15px;padding-top: 10px;font-size:15px;Color:white;" ng-click='closeSignaturePadPopover()'>Close</ion-label>
+
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+    <ion-content class="modal-parent" style="width:100%;background-color: #FFFFFF;" >
+    <canvas id='signatureCanvas1' ng-model="canInfo.Signature_1209189" width="1160" height="358" style="width: 100%; border: 1px solid black; touch-action: none;"'></canvas>
+          <div class='button-bar'>
+              <a class='button ' ng-click='clearCanvasPad()'>Clear</a>
+              <a class='button button-positive' ng-click='saveCanvasPad()'>Save</a>
+          </div>
+    </ion-content>
+
+

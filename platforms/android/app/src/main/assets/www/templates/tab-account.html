@@ -1,0 +1,41 @@
+<!-- <ion-view view-title="Account"> -->
+<ion-view hide-nav-bar="true" >
+
+ <ion-header-bar class="bar-positive " style="top:0px">
+ 
+  <h1 class="title tabs-title-lable"> Settings </h1>
+ 
+<!-- <img src="img/ellipse.png" class="headerEllipse"> -->
+  </div>
+</ion-header-bar>
+  <ion-content ng-init="validLogin()">
+
+    <ion-list>
+    <ion-item  ng-hide="1==1" id = "networkInfo" ng-click="networkInfo()">
+        <span >Network</span>
+      </ion-item>
+    <ion-item  ng-click="changePwd()">
+        <span>Change Password</span>
+      </ion-item>
+
+      <ion-item  ng-click="aboutUs()">
+        <span >About us</span>
+      </ion-item>
+
+      <ion-item ng-click="logout()">
+        <span>Logout</span>
+      </ion-item>
+    </ion-list>
+    
+
+ <!-- <button ng-click="image()">click</button> -->
+<ion-list>
+      <ion-item>
+      <span style="padding-left: 35%;">Username: {{user}}</span>
+      </ion-item>
+<!--       <ion-item>
+      <span style="padding-left: 35%;">Version: V7.0</span>
+      </ion-item>
+ -->    </ion-list>
+  </ion-content>
+</ion-view>
